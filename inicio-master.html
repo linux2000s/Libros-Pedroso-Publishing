@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedroso Publishing Company LLC | Editorial de Libros</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --azul-principal: #0f2c54;
+            --azul-secundario: #1e3a5f;
+            --dorado: #d4af37;
+            --crema: #f5f1e8;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #1a1a1a;
+            line-height: 1.6;
+            background: white;
+        }
+
+        /* HERO */
+        .hero {
+            background: linear-gradient(135deg, var(--azul-principal) 0%, var(--azul-secundario) 100%);
+            color: white;
+            padding: 6rem 2rem 8rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 80%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.05) 50%, transparent 70%);
+            transform: rotate(15deg);
+            pointer-events: none;
+        }
+
+        .logo {
+            max-width: 300px;
+            height: auto;
+            margin: 0 auto 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            letter-spacing: -0.02em;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 900;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-weight: 600;
+        }
+
+        /* CATEGORÍAS */
+        .categorias {
+            padding: 6rem 2rem;
+            background: var(--crema);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--azul-principal);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .categorias-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .categoria-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem 2rem;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .categoria-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 16px 32px rgba(15,44,84,0.15);
+            border-color: var(--azul-principal);
+        }
+
+        .categoria-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .categoria-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.75rem;
+            color: var(--azul-principal);
+            margin-bottom: 1rem;
+        }
+
+        .categoria-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .categoria-count {
+            display: inline-block;
+            background: var(--azul-principal);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .btn-ver {
+            display: inline-block;
+            background: var(--azul-principal);
+            color: white;
+            padding: 0.9rem 2rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.9rem;
+        }
+
+        .btn-ver:hover {
+            background: var(--azul-secundario);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(15,44,84,0.3);
+        }
+
+        /* ABOUT */
+        .about {
+            padding: 6rem 2rem;
+            background: white;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--azul-principal);
+            margin-bottom: 2rem;
+        }
+
+        .about p {
+            font-size: 1.15rem;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--azul-principal);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer p {
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-stats {
+                gap: 2rem;
+            }
+            
+            .categorias-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- HERO -->
+    <section class="hero">
+        <img src="data:image/jpeg;base64,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iSKVj5C6XY1yLmSujLXbAAa4aIUbvvwnVfdqqOxXqsslXeqO11FRbaJ3GpqWAFsR0D3777AgnQIAOzpZW41kDquCjbZ6v5ioqWUkLOIBkmfG2RrB39Sx7Xfs4LNR5RdKPDKvFaOR1PSVtW6oqZGHT5WmNjDET7N8gJ0Rv0Owt8OpVc24Y7XfY9J41orYa6od4z9188UMcAe72jBZEOzQRsk/okzf0giKopX2W7W+WujrrfUU77e6JlWHAfgukG49n+oDYI2CO/0WahxvIK6XwaOz1c0opGVxDWjtTuG2yevo7Y17n2BW/uueNu1XkU1yx2mmivbaQGNlXJGYH0zCyN5cB5z32dgA6HosVnzua33OGukstFW+FZYLR4E08ohkZEziHSMB4ytd/NG8EfQtIBTd9eDVd+UY+QrvkvnvlZflTTGrE2vKYRL4Jk/0+L5P3W2nw3KobrSWuaw1TK6tifLTwF0fKRjG8nO/NpoDe55a7LJ98bt9wvuXxg+zPkHUhJa3xCTWfNeLy1y2D5OO+Ou/qt7fep9wuGUUWSUtnoqGupKCooweYlY8ywmISFrmaPHZPF3IH0PZJm/t7/g1VBq6lqqGtno6ynlp6qB5jmhkaQ6NwPdpCwrYZLdHXzI7hepIfAfX1D6h0XiukDC47IDndyNntv0Hb2WvV43ruoIiKQREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQf/9k=" alt="Pedroso Publishing Company LLC" class="logo">
+        <h1>Pedroso Publishing Company LLC</h1>
+        <p>Editorial independiente dedicada a preservar el legado cultural cubano y empoderar a autores hispanos</p>
+        
+        <div class="hero-stats">
+            <div class="stat">
+                <span class="stat-number">60+</span>
+                <span class="stat-label">Títulos Publicados</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">9</span>
+                <span class="stat-label">Categorías</span>
+            </div>
+            <div class="stat">
+                <span class="stat-number">3</span>
+                <span class="stat-label">Pen Names</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORÍAS -->
+    <section class="categorias">
+        <div class="container">
+            <div class="section-header">
+                <h2>Explora Nuestro Catálogo</h2>
+                <p>Desde música cubana hasta desarrollo personal, descubre nuestra colección completa</p>
+            </div>
+
+            <div class="categorias-grid">
+                <!-- Business Quotes -->
+                <div class="categoria-card">
+                    <div class="categoria-icon">💼</div>
+                    <span class="categoria-count">16 Libros</span>
+                    <h3>Business Quotes</h3>
+                    <p>Lecciones de los más grandes emprendedores y motivadores del mundo</p>
+                    <a href="index.html" class="btn-ver">Ver Colección</a>
+                </div>
+
+                <!-- Cubanos Exitosos -->
+                <div class="categoria-card">
+                    <div class="categoria-icon">🎵</div>
+                    <span class="categoria-count">14 Libros</span>
+                    <h3>Cubanos Exitosos en el Mundo</h3>
+                    <p>Biografías de las leyendas musicales que definieron la cultura cubana</p>
+                    <a href="cubanos-exitosos.html" class="btn-ver">Ver Colección</a>
+                </div>
+
+                <!-- Magazines -->
+                <div class="categoria-card">
+                    <div class="categoria-icon">📰</div>
+                    <span class="categoria-count">8 Revistas</span>
+                    <h3>Revistas</h3>
+                    <p>Publicaciones sobre música cubana y autoedición para autores</p>
+                    <a href="magazines.html" class="btn-ver">Ver Colección</a>
+                </div>
+
+                <!-- Fiction -->
+                <div class="categoria-card">
+                    <div class="categoria-icon">📚</div>
+                    <span class="categoria-count">9 Libros</span>
+                    <h3>Ficción</h3>
+                    <p>Novelas del Miami Cycle, thriller policial y cuentos del folclore cubano</p>
+                    <a href="fiction.html" class="btn-ver">Ver Colección</a>
+                </div>
+
+                <!-- Technology & More -->
+                <div class="categoria-card">
+                    <div class="categoria-icon">💡</div>
+                    <span class="categoria-count">12 Libros</span>
+                    <h3>Technology, Finance & More</h3>
+                    <p>Guías de IA, self-publishing, finanzas personales e historia</p>
+                    <a href="mas-categorias.html" class="btn-ver">Ver Colección</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about">
+        <div class="about-content">
+            <h2>Nuestra Misión</h2>
+            <p>Pedroso Publishing Company LLC nace con la misión de preservar el rico legado musical y cultural de Cuba, mientras empodera a la nueva generación de autores hispanos independientes.</p>
+            <p>A través de nuestras publicaciones, conectamos el pasado con el presente, honrando a las figuras que transformaron la música cubana y compartiendo conocimiento que ayuda a escritores a alcanzar sus sueños.</p>
+            <p><strong>Publicado por: Daviel Mottola, Daviel Pedroso y Daniel Motola-Pedroso</strong></p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; 2025 Pedroso Publishing Company LLC. Todos los derechos reservados.</p>
+        <p>Book Publisher</p>
+    </footer>
+</body>
+</html>

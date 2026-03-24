@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros - Pedroso Publishing Company</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #0f2c54 0%, #1e3a5f 100%);
+            color: white;
+            padding: 80px 40px;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 40px rgba(15, 44, 84, 0.3);
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 22px;
+            line-height: 1.6;
+            opacity: 0.95;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .seccion {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .seccion h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: #0f2c54;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .seccion p {
+            font-size: 18px;
+            line-height: 1.8;
+            color: #475569;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .valores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .valor-card {
+            background: linear-gradient(135deg, #0f2c54 0%, #1e3a5f 100%);
+            color: white;
+            padding: 35px 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(15, 44, 84, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .valor-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .valor-icono {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .valor-titulo {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .valor-texto {
+            font-size: 15px;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 30px 20px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover {
+            border-color: #0f2c54;
+            box-shadow: 0 4px 20px rgba(15, 44, 84, 0.1);
+        }
+
+        .stat-numero {
+            font-size: 48px;
+            font-weight: 800;
+            color: #0f2c54;
+            margin-bottom: 10px;
+        }
+
+        .stat-texto {
+            font-size: 16px;
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        .cta-section {
+            background: linear-gradient(135deg, #0f2c54 0%, #1e3a5f 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 60px;
+        }
+
+        .cta-section h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .cta-section p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #0f2c54;
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 18px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .seccion {
+                padding: 30px 20px;
+            }
+
+            .seccion h2 {
+                font-size: 28px;
+            }
+
+            .seccion p {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="hero">
+            <h1>✍️ Sobre Pedroso Publishing</h1>
+            <p>
+                Democratizando el conocimiento empresarial y personal a través 
+                de libros accesibles y prácticos.
+            </p>
+        </div>
+
+        <div class="seccion">
+            <h2>📖 Nuestra Historia</h2>
+            <p>
+                Pedroso Publishing Company nace de una visión clara: hacer accesible el conocimiento 
+                de los grandes pensadores y emprendedores del mundo a la comunidad hispanohablante. 
+                Fundada por Daviel Mottola, nuestra editorial se especializa en la serie 
+                <strong>Business Quotes</strong>, una colección única que reúne las mejores lecciones 
+                de figuras como Gary Vaynerchuk, Alex Hormozi, Tony Robbins, Les Brown y otros gigantes 
+                del mundo empresarial.
+            </p>
+            <p>
+                Lo que comenzó como un proyecto personal de aprendizaje se transformó en una misión: 
+                tomar las ideas más poderosas del desarrollo personal y empresarial, comentarlas, 
+                explicarlas y presentarlas de manera que cualquier persona pueda aplicarlas 
+                inmediatamente en su vida y negocio.
+            </p>
+            <p>
+                Cada libro de nuestra serie no es simplemente una recopilación de frases. Es una 
+                <strong>edición comentada y práctica</strong> donde cada lección viene acompañada de 
+                contexto, explicación y aplicaciones concretas. Creemos que el verdadero valor no está 
+                en acumular citas motivacionales, sino en entender su significado profundo y saber 
+                cómo implementarlas.
+            </p>
+        </div>
+
+        <div class="seccion">
+            <h2>🎯 Misión y Visión</h2>
+            <p>
+                <strong style="color: #0f2c54; font-size: 20px;">Nuestra Misión:</strong><br>
+                Transformar las ideas de los grandes pensadores del mundo empresarial en herramientas 
+                prácticas y accesibles para emprendedores, profesionales y creadores hispanohablantes. 
+                Democratizamos el conocimiento eliminando barreras de idioma y costo, presentando 
+                contenido de clase mundial en formato comentado y aplicable.
+            </p>
+            <p>
+                <strong style="color: #0f2c54; font-size: 20px;">Nuestra Visión:</strong><br>
+                Convertirnos en la editorial de referencia para emprendedores y profesionales 
+                hispanohablantes que buscan conocimiento práctico y aplicable. Aspiramos a que cada 
+                libro de Business Quotes sea un manual de transformación personal y profesional, 
+                no solo un libro para leer, sino una herramienta para usar.
+            </p>
+        </div>
+
+        <div class="seccion">
+            <h2>💎 Nuestros Valores</h2>
+            <div class="valores-grid">
+                <div class="valor-card">
+                    <div class="valor-icono">📚</div>
+                    <div class="valor-titulo">Accesibilidad</div>
+                    <div class="valor-texto">
+                        Creemos que el conocimiento de calidad debe estar al alcance de todos, 
+                        sin importar el presupuesto.
+                    </div>
+                </div>
+                <div class="valor-card">
+                    <div class="valor-icono">💡</div>
+                    <div class="valor-titulo">Practicidad</div>
+                    <div class="valor-texto">
+                        Cada libro está diseñado para la aplicación inmediata. No teoría por teoría, 
+                        sino conocimiento accionable.
+                    </div>
+                </div>
+                <div class="valor-card">
+                    <div class="valor-icono">🎯</div>
+                    <div class="valor-titulo">Calidad</div>
+                    <div class="valor-texto">
+                        Cada lección está cuidadosamente seleccionada, comentada y explicada 
+                        para maximizar su impacto.
+                    </div>
+                </div>
+                <div class="valor-card">
+                    <div class="valor-icono">🌎</div>
+                    <div class="valor-titulo">Comunidad</div>
+                    <div class="valor-texto">
+                        Creamos puentes entre el conocimiento global y la comunidad hispanohablante 
+                        emprendedora.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="seccion">
+            <h2>📊 Nuestro Impacto</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-numero">16+</div>
+                    <div class="stat-texto">Libros Publicados</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-numero">10+</div>
+                    <div class="stat-texto">Grandes Pensadores</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-numero">500+</div>
+                    <div class="stat-texto">Lecciones Comentadas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-numero">2</div>
+                    <div class="stat-texto">Idiomas (ES/EN)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="seccion">
+            <h2>👨‍💼 Sobre el Autor</h2>
+            <p>
+                <strong>Daviel Mottola</strong> es un emprendedor apasionado por el aprendizaje continuo 
+                y el desarrollo personal. Como muchos emprendedores hispanohablantes, enfrentó la 
+                barrera del idioma al intentar acceder a las mejores enseñanzas del mundo empresarial, 
+                que en su mayoría estaban disponibles solo en inglés.
+            </p>
+            <p>
+                Esta experiencia lo motivó a crear Pedroso Publishing Company y la serie Business Quotes: 
+                una forma de compartir con la comunidad hispanohablante las lecciones que transformaron 
+                su propia vida empresarial y personal. Cada libro de la serie refleja años de estudio, 
+                aplicación práctica y un profundo compromiso con la excelencia.
+            </p>
+            <p>
+                Su filosofía es simple pero poderosa: <em>"El conocimiento sin aplicación es solo 
+                información. Mi trabajo es convertir información en transformación."</em>
+            </p>
+        </div>
+
+        <div class="cta-section">
+            <h2>¿Listo para transformar tu mentalidad?</h2>
+            <p>Explora nuestra serie Business Quotes y comienza tu viaje de transformación hoy</p>
+            <a href="#" class="cta-button">Ver Todos los Libros</a>
+        </div>
+
+    </div>
+
+</body>
+</html>

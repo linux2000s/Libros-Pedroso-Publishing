@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Pedroso Publishing Company</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #0f2c54 0%, #1e3a5f 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 40px rgba(15, 44, 84, 0.3);
+        }
+
+        .header h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .header p {
+            font-size: 18px;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Grid principal */
+        .contacto-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        /* Formulario */
+        .formulario-section {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .formulario-section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #0f2c54;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #334155;
+            margin-bottom: 8px;
+        }
+
+        .form-input,
+        .form-select,
+        .form-textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 16px;
+            font-family: inherit;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-input:focus,
+        .form-select:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: #0f2c54;
+        }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-button {
+            width: 100%;
+            background: #0f2c54;
+            color: white;
+            padding: 16px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .form-button:hover {
+            background: #1e3a5f;
+        }
+
+        /* Info de contacto */
+        .info-section {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .info-section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #0f2c54;
+            margin-bottom: 25px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .info-item:hover {
+            transform: translateX(5px);
+        }
+
+        .info-icono {
+            font-size: 28px;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .info-contenido h3 {
+            font-size: 16px;
+            font-weight: 700;
+            color: #0f2c54;
+            margin-bottom: 5px;
+        }
+
+        .info-contenido p {
+            font-size: 15px;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        .info-contenido a {
+            color: #0f2c54;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .info-contenido a:hover {
+            text-decoration: underline;
+        }
+
+        /* Horarios */
+        .horarios {
+            background: linear-gradient(135deg, #0f2c54 0%, #1e3a5f 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 25px;
+        }
+
+        .horarios h3 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .horario-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .horario-item:last-child {
+            border-bottom: none;
+        }
+
+        /* Redes Sociales */
+        .redes-sociales {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .redes-sociales h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #0f2c54;
+            margin-bottom: 25px;
+        }
+
+        .redes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 20px;
+        }
+
+        .red-social {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 25px 15px;
+            background: #f8fafc;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #0f2c54;
+            transition: all 0.3s ease;
+        }
+
+        .red-social:hover {
+            background: #0f2c54;
+            color: white;
+            transform: translateY(-5px);
+        }
+
+        .red-social-icono {
+            font-size: 40px;
+        }
+
+        .red-social-nombre {
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        /* FAQ */
+        .faq-section {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            margin-top: 50px;
+        }
+
+        .faq-section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            color: #0f2c54;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .faq-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-pregunta {
+            font-size: 18px;
+            font-weight: 700;
+            color: #0f2c54;
+            margin-bottom: 10px;
+        }
+
+        .faq-respuesta {
+            font-size: 15px;
+            color: #475569;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .contacto-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 32px;
+            }
+
+            .formulario-section,
+            .info-section {
+                padding: 25px;
+            }
+
+            .redes-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- Header -->
+        <div class="header">
+            <h1>📧 Contáctanos</h1>
+            <p>
+                Estamos aquí para responder tus preguntas, escuchar tus ideas 
+                y ayudarte en lo que necesites.
+            </p>
+        </div>
+
+        <!-- Grid Principal -->
+        <div class="contacto-grid">
+            
+            <!-- Formulario -->
+            <div class="formulario-section">
+                <h2>Envíanos un mensaje</h2>
+                <form>
+                    <div class="form-group">
+                        <label class="form-label">Nombre completo *</label>
+                        <input type="text" class="form-input" placeholder="Tu nombre" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Email *</label>
+                        <input type="email" class="form-input" placeholder="tu@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Teléfono</label>
+                        <input type="tel" class="form-input" placeholder="(555) 123-4567">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Motivo de contacto *</label>
+                        <select class="form-select" required>
+                            <option value="">Selecciona una opción</option>
+                            <option value="compra">Consulta sobre compra</option>
+                            <option value="autor">Soy autor interesado</option>
+                            <option value="distribucion">Distribución mayorista</option>
+                            <option value="prensa">Prensa y medios</option>
+                            <option value="colaboracion">Colaboración</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Mensaje *</label>
+                        <textarea class="form-textarea" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="form-button">Enviar Mensaje</button>
+                </form>
+            </div>
+
+            <!-- Información de Contacto -->
+            <div class="info-section">
+                <h2>Información de Contacto</h2>
+
+                <div class="info-item">
+                    <div class="info-icono">📧</div>
+                    <div class="info-contenido">
+                        <h3>Email</h3>
+                        <p><a href="mailto:info@pedrosopublishing.com">info@pedrosopublishing.com</a></p>
+                        <p><a href="mailto:ventas@pedrosopublishing.com">ventas@pedrosopublishing.com</a></p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icono">📱</div>
+                    <div class="info-contenido">
+                        <h3>Teléfono</h3>
+                        <p>+1 (555) 123-4567</p>
+                        <p>WhatsApp: +1 (555) 987-6543</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icono">📍</div>
+                    <div class="info-contenido">
+                        <h3>Oficinas</h3>
+                        <p>123 Calle Principal<br>
+                        Suite 456<br>
+                        Ciudad, Estado 12345<br>
+                        Estados Unidos</p>
+                    </div>
+                </div>
+
+                <!-- Horarios -->
+                <div class="horarios">
+                    <h3>⏰ Horario de Atención</h3>
+                    <div class="horario-item">
+                        <span>Lunes - Viernes</span>
+                        <span>9:00 AM - 6:00 PM</span>
+                    </div>
+                    <div class="horario-item">
+                        <span>Sábado</span>
+                        <span>10:00 AM - 2:00 PM</span>
+                    </div>
+                    <div class="horario-item">
+                        <span>Domingo</span>
+                        <span>Cerrado</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Redes Sociales -->
+        <div class="redes-sociales">
+            <h2>Síguenos en Redes Sociales</h2>
+            <div class="redes-grid">
+                <a href="#" class="red-social">
+                    <div class="red-social-icono">📘</div>
+                    <div class="red-social-nombre">Facebook</div>
+                </a>
+                <a href="#" class="red-social">
+                    <div class="red-social-icono">📷</div>
+                    <div class="red-social-nombre">Instagram</div>
+                </a>
+                <a href="#" class="red-social">
+                    <div class="red-social-icono">🐦</div>
+                    <div class="red-social-nombre">Twitter</div>
+                </a>
+                <a href="#" class="red-social">
+                    <div class="red-social-icono">💼</div>
+                    <div class="red-social-nombre">LinkedIn</div>
+                </a>
+                <a href="#" class="red-social">
+                    <div class="red-social-icono">📺</div>
+                    <div class="red-social-nombre">YouTube</div>
+                </a>
+                <a href="#" class="red-social">
+                    <div class="red-social-icono">📚</div>
+                    <div class="red-social-nombre">Goodreads</div>
+                </a>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="faq-section">
+            <h2>Preguntas Frecuentes</h2>
+
+            <div class="faq-item">
+                <div class="faq-pregunta">❓ ¿Cuánto tarda el envío de los libros?</div>
+                <div class="faq-respuesta">
+                    Los libros físicos se envían en un plazo de 24-48 horas. El tiempo de entrega 
+                    depende de tu ubicación, generalmente entre 3-7 días hábiles dentro de EE.UU. 
+                    Los libros digitales están disponibles inmediatamente después de la compra.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-pregunta">❓ ¿Aceptan manuscritos de nuevos autores?</div>
+                <div class="faq-respuesta">
+                    Sí, siempre estamos buscando nuevos talentos. Por favor envía tu propuesta 
+                    (sinopsis, primeros 3 capítulos, y tu biografía) a 
+                    <a href="mailto:manuscritos@pedrosopublishing.com">manuscritos@pedrosopublishing.com</a>. 
+                    Revisamos todas las propuestas y respondemos en un plazo de 4-6 semanas.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-pregunta">❓ ¿Qué métodos de pago aceptan?</div>
+                <div class="faq-respuesta">
+                    Aceptamos todas las tarjetas de crédito y débito principales a través de PayPal. 
+                    También ofrecemos la opción de pago con PayPal balance para mayor comodidad.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-pregunta">❓ ¿Hacen descuentos para compras al por mayor?</div>
+                <div class="faq-respuesta">
+                    Sí, ofrecemos descuentos especiales para bibliotecas, escuelas, clubes de lectura 
+                    y distribuidores. Contáctanos a 
+                    <a href="mailto:ventas@pedrosopublishing.com">ventas@pedrosopublishing.com</a> 
+                    para obtener más información sobre nuestros precios mayoristas.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-pregunta">❓ ¿Tienen los libros en formato digital?</div>
+                <div class="faq-respuesta">
+                    Sí, la mayoría de nuestros títulos están disponibles tanto en formato físico 
+                    como digital (ePub, PDF, Kindle). Puedes verificar la disponibilidad en la 
+                    página de cada libro en nuestro catálogo.
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+</html>
